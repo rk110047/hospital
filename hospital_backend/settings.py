@@ -25,7 +25,7 @@ SECRET_KEY = '3*d_(#2t7b4op-#f9%ws^j1ro(2z=ii72+s)y_$4*9*5m3sb=k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['196.29.226.28']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'hospital',
     'authentication',
     'vaccine',
-    'appointment'
+    'appointment',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,9 +54,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'hospital_backend.urls'
+
+CORS_ALLOW_ALL_ORIGINS=True
 
 TEMPLATES = [
     {
@@ -125,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 
 MEDIA_ROOT= BASE_DIR / 'media/'

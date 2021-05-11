@@ -14,6 +14,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
 class AppointmentListSerializer(serializers.ModelSerializer):
 	patient 		=		SubUserSerializer()
 	vaccine 		=		VaccineSerializer()
+	rud 							=		serializers.HyperlinkedIdentityField(view_name="appointment:appointment-rud",lookup_field="id")
 	class Meta:
 		model 				=		Appointment
 		fields 				=		"__all__"

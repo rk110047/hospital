@@ -20,7 +20,7 @@ class VaccineSerializer(serializers.ModelSerializer):
 
 
 class VaccineGroupsSerializer(serializers.ModelSerializer):
-	vaccines 	=	VaccineSerializer()	
+	vaccines 	=	VaccineSerializer(many=True)	
 	class Meta:
 		model 	=	VaccineGroups
 		fields	=	'__all__'

@@ -11,6 +11,7 @@ class SubUser(models.Model):
 	relation 	=		models.CharField(max_length=120)
 	age 		=		models.CharField(max_length=120)
 	profession  =       models.CharField(max_length=120)
+	image           =   models.FileField(upload_to='subprofile/', null=True, verbose_name="")
 
 	def __str__(self):
 		return 	self.name

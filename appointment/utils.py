@@ -10,6 +10,6 @@ def unique_id_generator(instance):
 
     order_new_id        =   random_string_generator()
     klass           =   instance.__class__
-    qs              =   klass.objects.filter(ride_id=order_new_id).exists()
+    qs              =   klass.objects.filter(appointment_id=order_new_id).exists()
 
     return unique_id_generator(instance) if qs else order_new_id
